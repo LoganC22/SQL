@@ -1,0 +1,35 @@
+-- create a store database. I chose soccer merch
+
+CREATE TABLE store (id INTEGER PRIMARY KEY, name TEXT, brand TEXT, price INTEGER, sale TEXT);
+
+INSERT INTO store VALUES 
+(1, "Cleats", "PUMA", 70, "NO"),
+(2, "Ball", "NIKE", 45, "YES"),
+(3, "Tottenham Shirt", "NIKE", 70, "NO"),
+(4, "Chelsea Shirt", "NIKE", 90, "NO"),
+(5, "Shorts", "NIKE", 30, "YES"),
+(6, "Shorts", "PUMA", 45, "NO"),
+(7, "Man City Shirt", "PUMA", 90, "NO"),
+(8, "Dortmund Joggers", "PUMA", 55, "YES"),
+(9, "New Mexico United Shirt", "PUMA", 90, "NO"),
+(10, "Arsenal Kit", "ADIDAS", 0.99, "YES"),
+(11, "Bournemouth Kit", "UMBRO", 85, "NO"),
+(12, "Leeds Kit", "ADIDAS", 90, "NO"),
+(13, "Youth Tottenham Kit", "NIKE", 30, "YES"),
+(14, "Exeter City Kit", "JOMA", 65, "YES"),
+(15, "Wrexham Kit", "MACRON", 85, "NO");
+
+-- display the cheapest item
+SELECT * from store
+WHERE price
+ORDER BY price asc;
+
+--display the most expensive item
+SELECT * from store
+WHERE price
+ORDER BY price desc;
+
+
+--avg price of items
+SELECT avg(price)
+FROM store;
