@@ -73,3 +73,7 @@ WHEN popularity >20 THEN "Sort of Popular"
 ELSE "Not Popular"
 END AS "Popular characters" FROM marvels
 GROUP BY "name";
+
+--Select marvel characters who are good and female
+SELECT name FROM marvels
+WHERE gender = "Female" AND alignment = "Good";
