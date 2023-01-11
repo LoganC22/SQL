@@ -1,0 +1,43 @@
+/* Create table about the people and what they do here */
+CREATE TABLE player (id INTEGER PRIMARY KEY, Fullname TEXT, Age INTEGER);
+
+INSERT INTO player VALUES
+(1, "Harry Kane", 29),
+(2, "Heung Min-Son", 30),
+(3, "Lionel Messi", 35),
+(4, "Mohamed Salah", 30),
+(5, "Kevin De Bruyne", 31),
+(6, "Erling Haaland", 22),
+(7, "Kylian Mbappe", 24),
+(8, "Neymar", 30);
+
+CREATE TABLE teams (id INTEGER PRIMARY KEY, Club TEXT, Country TEXT);
+
+INSERT INTO teams VALUES
+(1, "Tottenham", "England"),
+(2, "Tottenham", "South Korea"),
+(3, "PSG", "Argentina"),
+(4, "Liverpool", "Egypt"),
+(5, "Manchester City", "Belgium"),
+(6, "Manchester City", "Norway"),
+(7, "PSG", "France"),
+(8, "PSG", "Brazil");
+
+-- Select player and their club team
+SELECT player.fullname, teams.club
+FROM player
+JOIN teams
+ON player.id=teams.id;
+
+-- Select player and their country
+SELECT player.fullname, teams.country
+FROM player
+JOIN teams
+ON player.id=teams.id;
+
+--Select all information on Harry Kane
+SELECT player.fullname, player.age, teams.club, teams.country
+FROM player
+JOIN teams
+ON player.id=teams.id
+WHERE player.fullname = "Harry Kane";
