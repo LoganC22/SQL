@@ -41,3 +41,11 @@ FROM player
 JOIN teams
 ON player.id=teams.id
 WHERE player.fullname = "Harry Kane";
+
+--Showing all Tottenham and PSG players
+SELECT player.fullname, player.age, teams.club, teams.country
+FROM player
+JOIN teams
+ON player.id=teams.id
+WHERE teams.club= "Tottenham"
+OR teams.club= "PSG";
